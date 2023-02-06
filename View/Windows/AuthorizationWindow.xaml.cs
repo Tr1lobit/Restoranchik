@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestoApp_Afonichev.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace RestoApp_Afonichev.View.Windows
 {
@@ -31,7 +33,34 @@ namespace RestoApp_Afonichev.View.Windows
             // Чтобы работать с sender'ом его нужно привести к конкретному типу (тип объекта который откликнулся на событие)
 
             // Приводим тип Object к типу Button
-            (sender as Button).Content;
+            // Складываем значение из свойства Password с Content'ом из кнопки
+            //Присваиваем обновленное значение
+            PincodePb.Password += (sender as Button).Content.ToString();
+
+            if (PincodePb.Password.Length==4)
+            {
+                Waiter waiter = App.GetContext().Waiter.FirstOrDefault(w => PincodePb.Password == w.Pincode);
+
+                if (waiter != null)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неправильный PIN-код!");
+                    PincodePb.Clear();
+                }
+            }
+        }
+
+        private void DeletePincodeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PincodePb.Password.Length > 0)
+            {
+
+            }
         }
     }
 }

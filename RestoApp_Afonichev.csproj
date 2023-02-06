@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +74,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Category.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cheque.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChequePosition.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Position.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RestoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RestoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RestoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Table.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Waiter.cs">
+      <DependentUpon>RestoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Windows\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
@@ -93,6 +133,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\RestoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RestoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\RestoModel.edmx.diagram">
+      <DependentUpon>RestoModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,12 +160,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
-    <Folder Include="Model\" />
     <Folder Include="View\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\logo.png" />
     <Resource Include="Resources\Icons\waiter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\RestoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RestoModel.Context.cs</LastGenOutput>
+      <DependentUpon>RestoModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\RestoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestoModel.edmx</DependentUpon>
+      <LastGenOutput>RestoModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

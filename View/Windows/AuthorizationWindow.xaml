@@ -94,7 +94,9 @@
         <Button Grid.Row="5"
                 Grid.Column="2"
                 Content="X"
-                Style="{StaticResource PincodeButtonStyle}"/>
+                Style="{StaticResource PincodeButtonStyle}"
+                Name="DeletePincodeBtn"
+                Click="DeletePincodeBtn_Click"/>
         <!--#endregion-->
         
     </Grid>
