@@ -59,7 +59,8 @@ namespace RestoApp_Afonichev.View.Windows
         {
             if (PincodePb.Password.Length > 0)
             {
-
+                // Удаление символов с конца
+                PincodePb.Password = PincodePb.Password.Remove(PincodePb.Password.Length - 1);
             }
         }
     }
