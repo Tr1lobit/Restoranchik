@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoApp_Afonichev", "RestoApp_Afonichev.csproj", "{2F314163-DDBC-4C11-92A1-752DEE9D8A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization", "..\Authorization\Authorization.csproj", "{66A3BD98-FEB0-417D-9874-7D2F4355EFA8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,15 +15,11 @@ Global
 		{2F314163-DDBC-4C11-92A1-752DEE9D8A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F314163-DDBC-4C11-92A1-752DEE9D8A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F314163-DDBC-4C11-92A1-752DEE9D8A4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66A3BD98-FEB0-417D-9874-7D2F4355EFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66A3BD98-FEB0-417D-9874-7D2F4355EFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66A3BD98-FEB0-417D-9874-7D2F4355EFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66A3BD98-FEB0-417D-9874-7D2F4355EFA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {21C7E9F8-014F-44DF-AD18-5DE9364B5436}
+		SolutionGuid = {4AC616B8-8B06-4213-81C2-8315A725937B}
 	EndGlobalSection
 EndGlobal

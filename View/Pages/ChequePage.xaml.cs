@@ -1,5 +1,4 @@
-﻿using RestoApp_Afonichev.View.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,23 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RestoApp_Afonichev
+namespace RestoApp_Afonichev.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ChequePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChequePage : Page
     {
-        public MainWindow()
+        public ChequePage()
         {
             InitializeComponent();
 
-            MainFrm.Navigate(new ChequePage());
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            //Передача таблицы со столами в список
+            TablesLb.ItemsSource = App.GetContext().Table.ToList();
         }
     }
 }

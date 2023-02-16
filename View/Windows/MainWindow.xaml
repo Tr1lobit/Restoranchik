@@ -41,6 +41,9 @@
 
             <TextBlock />
         </StackPanel>
+        
+        <!--Page Navigation-->
+        <!--H 749 W 1592--> 
         <Frame x:Name="MainFrm"
                Grid.Row="1"
                Grid.ColumnSpan="3"
