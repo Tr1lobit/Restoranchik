@@ -1,0 +1,60 @@
+﻿<Page x:Class="RestoApp_Afonichev.View.Pages.AddEditWaiters"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RestoApp_Afonichev.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="749" d:DesignWidth="1592"
+      Title="AddEditWaiters">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".3*"/>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="EmployeeLv"
+                  FontSize="20"
+                  FontWeight="SemiBold">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ФИО"
+                                    DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Пинкод"
+                                    DisplayMemberBinding="{Binding Pincode}"/>
+                    <GridViewColumn Header="Должность"
+                                    DisplayMemberBinding="{Binding Role.Role_name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Width="270"
+                    Height="100"
+                    Name="AddEmployeeBtn"
+                    Click="AddEmployeeBtn_Click"
+                    Content="Добавить"
+                    FontSize="30"/>
+            <Button Grid.Column="1"
+                    Width="270"
+                    Height="100"
+                    Name="EditEmployeeBtn"
+                    Click="EditEmployeeBtn_Click"
+                    Content="Изменить"
+                    FontSize="30"/>
+            <Button Grid.Column="2"
+                    Width="270"
+                    Height="100"
+                    Name="DeleteEmployeeBtn"
+                    Content="Удалить"
+                    Click="DeleteEmployeeBtn_Click"
+                    FontSize="30"/>
+        </Grid>
+    </Grid>
+</Page>

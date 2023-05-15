@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f51facc0adb4f82a67b5897e9e1dd82" Name="Diagram1">
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.Category" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.Cheque" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.ChequePosition" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.Employee" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.Position" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestoDb_AfonichevModel.Table" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="RestoDb_AfonichevModel.FK_Position_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="RestoDb_AfonichevModel.FK_Cheque_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="RestoDb_AfonichevModel.FK_Cheque_Waiter" ManuallyRouted="false" />
+        <AssociationConnector Association="RestoDb_AfonichevModel.FK_ChequePosition_Cheque" ManuallyRouted="false" />
+        <AssociationConnector Association="RestoDb_AfonichevModel.FK_ChequePosition_Position" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

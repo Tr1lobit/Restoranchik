@@ -1,0 +1,66 @@
+﻿<Window x:Class="RestoApp_Afonichev.View.Windows.AddPositionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestoApp_Afonichev.View.Windows"
+        mc:Ignorable="d"
+        Title="AddPositionWindow" 
+        Height="720" Width="850"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Укажите название:"
+                   Grid.Row="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+        <TextBlock Grid.Row="1"
+                   Text="Укажите цену:"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+        <TextBlock Grid.Row="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="Укажите тип:"
+                   FontSize="25"/>
+        <TextBox Name="PositionNameTb"
+                 Grid.Column="1"
+                 Width="350"
+                 Height="50"
+                 VerticalContentAlignment="Center"
+                 FontSize="23"/>
+        <TextBox Name="PositionCostTb"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Width="350"
+                 Height="50"
+                 VerticalContentAlignment="Center"
+                 FontSize="23"/>
+        <ComboBox Name="PositionTypeCmb"
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  DisplayMemberPath="Title"
+                  Width="350"
+                  Height="50"
+                  FontSize="23"/>
+        <Button Name="NewPositionBtn"
+                Grid.Row="3"
+                Grid.Column="1"
+                Content="Добавить позицию"
+                FontSize="25"
+                Click="NewPositionBtn_Click"
+                Width="250"
+                Height="100"/>
+    </Grid>
+</Window>
