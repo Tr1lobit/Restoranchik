@@ -43,7 +43,6 @@ namespace RestoApp_Afonichev.View.Pages
                 AddTableWindow addTableWindow = new AddTableWindow(TableLv.SelectedItem as Table);
                 addTableWindow.ShowDialog();
                 TableLv.ItemsSource = App.GetContext().Table.ToList();
-                TableLv.SelectedItem = null;
             }
         }
 
