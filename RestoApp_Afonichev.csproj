@@ -99,6 +99,9 @@
     <Compile Include="Model\Table.cs">
       <DependentUpon>RestoDb_Afonichev.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\AddEditPosition.xaml.cs">
+      <DependentUpon>AddEditPosition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\AddEditTables.xaml.cs">
       <DependentUpon>AddEditTables.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
     <Compile Include="View\Windows\PaymentWindow.xaml.cs">
       <DependentUpon>PaymentWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Pages\AddEditPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\AddEditTables.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

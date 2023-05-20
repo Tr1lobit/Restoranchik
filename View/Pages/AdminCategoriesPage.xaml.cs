@@ -34,5 +34,10 @@ namespace RestoApp_Afonichev.View.Pages
         {
             NavigationService.Navigate(new AddEditTables());
         }
+
+        private void PositionBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditPosition());
+        }
     }
 }

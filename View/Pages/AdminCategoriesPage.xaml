@@ -25,6 +25,8 @@
                 Click="TableBtn_Click"/>
         <Button Grid.Column="2"
                 Style="{StaticResource AdminButtonStyle}"
-                Content="Позиции"/>
+                Content="Позиции"
+                Name="PositionBtn"
+                Click="PositionBtn_Click"/>
     </Grid>
 </Page>

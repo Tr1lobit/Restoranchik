@@ -37,24 +37,32 @@ namespace RestoApp_Afonichev.View.Windows
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(IsChange==false)
+            if (EmpoyeePincodeTb.Text.Length == 4)
             {
-                Employee newEmployee = new Employee
+                if (IsChange == false)
                 {
-                    Name = EmpoyeeNameTb.Text,
-                    Pincode = EmpoyeePincodeTb.Text,
-                    RoleId = EmployeeRoleCmb.SelectedIndex
-                };
-                App.GetContext().Employee.Add(newEmployee);
-                App.GetContext().SaveChanges();
-                MessageBox.Show("Сотрудник добавлен!");
-                Close();
+                    Employee newEmployee = new Employee
+                    {
+                        Name = EmpoyeeNameTb.Text,
+                        Pincode = EmpoyeePincodeTb.Text,
+                        RoleId = EmployeeRoleCmb.SelectedIndex
+                    };
+                    App.GetContext().Employee.Add(newEmployee);
+                    App.GetContext().SaveChanges();
+                    MessageBox.Show("Сотрудник добавлен!");
+                    Close();
+                }
+                else
+                {
+                    App.GetContext().SaveChanges();
+                    MessageBox.Show("Сотрудник изменен!");
+                    Close();
+                }
             }
             else
             {
-                App.GetContext().SaveChanges();
-                MessageBox.Show("Сотрудник изменен!");
-                Close();
+                MessageBox.Show("Пароль не соответствует стандарту!");
+                EmpoyeePincodeTb.Text = null;
             }
         }
 
