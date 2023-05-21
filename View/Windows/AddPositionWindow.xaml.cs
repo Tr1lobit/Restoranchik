@@ -23,6 +23,7 @@ namespace RestoApp_Afonichev.View.Windows
     /// </summary>
     public partial class AddPositionWindow : Window
     {
+        private bool isEdit = false;
         List<Category> categories = new List<Category>();
         public AddPositionWindow()
         {
@@ -31,24 +32,42 @@ namespace RestoApp_Afonichev.View.Windows
             PositionTypeCmb.ItemsSource = categories;
         }
 
+        public AddPositionWindow(object selectedItem)
+        {
+            InitializeComponent();
+            categories = App.GetContext().Category.ToList();
+            PositionTypeCmb.ItemsSource = categories;
+            DataContext = selectedItem;
+            isEdit = true;
+        }
+
         private void NewPositionBtn_Click(object sender, RoutedEventArgs e)
         {
+            if(isEdit)
+            {
+                App.GetContext().SaveChanges();
+                MessageBox.Show("Позиция изменена!");
+                Close();
+            }
+            else
+            {
             Position newPosition = new Position
             {
                 Title = PositionNameTb.Text,
                 Cost = Convert.ToDecimal(PositionCostTb.Text),
-                CategoryId = PositionTypeCmb.SelectedIndex+1
+                CategoryId = PositionTypeCmb.SelectedIndex
             };
             App.GetContext().Position.Add(newPosition);
             App.GetContext().SaveChanges();
             MessageBox.Show("Позиция создана");
             DialogResult = true;
             Close();
+            }
         }
 
-        private void PositionNameTb_TextChanged(object sender, TextChangedEventArgs e)
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

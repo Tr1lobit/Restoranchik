@@ -93,19 +93,22 @@
                     Height="100"
                     Name="AddPositionBtn"
                     Content="Добавить"
-                    FontSize="30"/>
+                    FontSize="30"
+                    Click="AddPositionBtn_Click"/>
             <Button Grid.Column="1"
                     Width="270"
                     Height="100"
                     Name="EditPositionBtn"
                     Content="Изменить"
-                    FontSize="30"/>
+                    FontSize="30"
+                    Click="EditPositionBtn_Click"/>
             <Button Grid.Column="2"
                     Width="270"
                     Height="100"
                     Name="DeletePositionBtn"
                     Content="Удалить"
-                    FontSize="30"/>
+                    FontSize="30"
+                    Click="DeletePositionBtn_Click"/>
         </Grid>
     </Grid>
 </Page>
